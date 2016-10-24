@@ -1,22 +1,8 @@
 {
-  "globals": {
-    "Meteor": true,
-    "Kadira": true,
-    "Roles": true,
-    "DocHead": true,
-    "FlowRouter": true
-  },
-  "plugins": [
-    "meteor"
-  ],
-  "extends": [
-    "airbnb",
-    "plugin:meteor/recommended"
-    ],
+  "extends": "airbnb",
   "env": {
     "browser": true,
-    "node": true,
-    "meteor": true
+    "node": true
   },
   "parser": "babel-eslint",
   "parser-options": {
