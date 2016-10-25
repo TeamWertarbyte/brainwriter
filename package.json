@@ -4,7 +4,7 @@
   "description": "Der moderne Weg Ideen zu sammeln",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/nodemon server/index.js",
+    "start": "node_modules/.bin/nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,12 +18,12 @@
   },
   "homepage": "https://github.com/TeamWertarbyte/brainwriter#readme",
   "dependencies": {
+    "boom": "^4.2.0",
     "hapi": "^15.2.0",
-    "material-ui": "^0.16.1",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-router": "^2.8.1",
-    "react-tap-event-plugin": "^1.0.0"
+    "joi": "^9.2.0",
+    "lokijs": "^1.4.1",
+    "node-uuid": "^1.4.7",
+    "shortid": "^2.2.6"
   },
   "devDependencies": {
     "babel": "^6.5.2",
