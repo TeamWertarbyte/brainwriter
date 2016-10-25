@@ -24,9 +24,9 @@ exports.register = (server, options, next) => {
     handler: (request, reply) => {
       const key = encodeURIComponent(request.params.id)
 
-      const session = (sessions.findOne({
+      const session = sessions.findOne({
         key
-      }))
+      })
 
       if (!session) {
         reply(Boom.notFound())
@@ -41,11 +41,14 @@ exports.register = (server, options, next) => {
     path: '/sessions',
     handler: (request, reply) => {
       const key = shortid.generate()
+      const title = encodeURIComponent(request.query.title)
+      const description = encodeURIComponent(request.query.description)
+
       const session = {
         _id: uuid.v1(),
         key,
-        title: request.query.title,
-        description: request.query.description,
+        title,
+        description,
         state: 0,
         currentRound: 0,
         papers: [],
