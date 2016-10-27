@@ -2,6 +2,9 @@
 
 const Hapi = require('hapi')
 const loki = require('lokijs')
+const Inert = require('inert')
+const Vision = require('vision')
+const HapiSwagger = require('hapi-swagger')
 
 const sessionRoutes = require('./routes/sessions')
 
@@ -14,6 +17,16 @@ server.connection({
 server.app.db = new loki('loki.json')
 
 server.register([
+    Inert,
+  Vision,
+  {
+    'register': HapiSwagger,
+    'options': {
+        info: {
+            'title': 'Test API Documentation'
+        }
+    }
+  },
   sessionRoutes
 ], (err) => {
   if (err) {

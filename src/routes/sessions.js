@@ -58,6 +58,7 @@ exports.register = (server, options, next) => {
       reply(key)
     },
     config: {
+      tags: ['api'],
       validate: {
         query: {
           title: Joi.string().max(50).required(),
